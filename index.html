@@ -653,6 +653,261 @@ footer .logo { color: var(--accent); }
 
 /* SELECTION */
 ::selection { background: rgba(233,69,96,0.3); color: var(--text); }
+```css
+/* ============================= */
+/* PROJECTS & INTERNSHIP */
+/* ============================= */
+
+#projects {
+  background: var(--bg2);
+}
+
+.subsection-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.subsection-title span {
+  color: var(--accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(233,69,96,0.35);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent3),
+    var(--accent2)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-number {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  font-family: var(--display);
+  font-size: 42px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.035);
+}
+
+.project-content {
+  padding: 30px;
+}
+
+.project-type {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-right: 50px;
+}
+
+.project-description {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.project-tags span {
+  font-size: 9px;
+  padding: 5px 9px;
+  color: var(--text);
+  background: rgba(255,255,255,0.035);
+  border: 1px solid var(--border);
+  letter-spacing: 0.5px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.project-link span {
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.project-link:hover {
+  color: var(--text);
+}
+
+.project-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+.project-link.secondary {
+  color: var(--muted);
+}
+
+.project-link.secondary:hover {
+  color: var(--accent2);
+}
+
+
+/* EXPERIENCE */
+
+.internship-heading {
+  margin-top: 70px;
+}
+
+.experience-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 32px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.experience-card:hover {
+  border-color: rgba(0,212,255,0.25);
+  transform: translateY(-3px);
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.experience-type {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.experience-title {
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.experience-role {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.experience-date {
+  font-size: 10px;
+  color: var(--accent2);
+  white-space: nowrap;
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 7px 12px;
+}
+
+.experience-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 25px 0;
+}
+
+.experience-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.experience-summary p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.detail-title {
+  font-size: 9px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.experience-details ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.experience-details li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
+.experience-details li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+```
+
 
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
@@ -661,6 +916,7 @@ footer .logo { color: var(--accent); }
   .hero-stats { display: none; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  .projects-grid { grid-template-columns: 1fr; } .experience-body { grid-template-columns: 1fr; gap: 30px; } .experience-top { flex-direction: column; gap: 15px; } .experience-date { align-self: flex-start; }
 }
 </style>
 </head>
@@ -706,15 +962,15 @@ footer .logo { color: var(--accent); }
 
   <div class="hero-stats">
     <div class="stat-card">
-      <div class="num">300<span>+</span></div>
+      <div class="num">400<span>+</span></div>
       <div class="label">LC Problems</div>
     </div>
     <div class="stat-card">
-      <div class="num">1530</div>
+      <div class="num">1569</div>
       <div class="label">Contest Rating</div>
     </div>
     <div class="stat-card">
-      <div class="num">#83</div>
+      <div class="num">#77</div>
       <div class="label">GFG Institute</div>
     </div>
   </div>
@@ -730,9 +986,9 @@ footer .logo { color: var(--accent); }
   <div class="about-grid">
     <div class="about-text reveal">
       <p>I have just completed my <strong>2nd-year as a Computer Science student</strong> at IIIT Manipur, driven by a deep passion for writing efficient code and tackling complex algorithmic challenges.</p>
-      <p>My journey in competitive programming has sharpened my ability to think systematically under pressure — I've solved over <strong>326 problems on LeetCode</strong>(till 1st of June 2026) and maintain an active presence on GeeksForGeeks.</p>
+      <p>My journey in competitive programming has sharpened my ability to think systematically under pressure — I've solved over <strong>411 problems on LeetCode</strong>(till 27/08/2026) and maintain an active presence on GeeksForGeeks.</p>
       <p>I'm currently exploring <strong>Artificial Intelligence and Machine Learning</strong>, fascinated by how intelligent systems can learn patterns and make decisions from data. My goal is to bridge theoretical CS fundamentals with real-world software development.</p>
-      <p>I'm actively seeking my <strong>first internship or collaborative project</strong> where I can contribute, learn from experienced engineers, and grow as a developer.</p>
+      <p>I'm actively seeking my <strong> job or collaborative project</strong> where I can contribute, learn from experienced engineers, and grow as a developer.</p>
     </div>
     <div class="reveal">
       <div class="about-card">
@@ -763,7 +1019,7 @@ footer .logo { color: var(--accent); }
         <span class="skill-tag">HTML</span>
         <span class="skill-tag">React</span>
         <span class="skill-tag">CSS</span>
-        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">My SQL</span>
       </div>
     </div>
     <div class="skill-group reveal">
@@ -781,7 +1037,7 @@ footer .logo { color: var(--accent); }
       <div class="skill-group-title">Currently Learning</div>
       <div class="skill-tags">
         <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Machine Learning</span>
-        <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Neural Networks</span>
+        <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Data Science</span>
         <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Backend Dev</span>
       </div>
     </div>
@@ -806,11 +1062,11 @@ footer .logo { color: var(--accent); }
       <div class="profile-url">leetcode.com/u/20_Rishabh_06</div>
       <div class="stats-row">
         <div class="stat-item">
-          <div class="stat-num">300+</div>
+          <div class="stat-num">400+</div>
           <div class="stat-label">Solved</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">1448</div>
+          <div class="stat-num">1569</div>
           <div class="stat-label">Rating</div>
         </div>
         <div class="stat-item">
@@ -818,8 +1074,12 @@ footer .logo { color: var(--accent); }
           <div class="stat-label">Rank</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">551K</div>
+          <div class="stat-num">252,486 i.e. in top 29%</div>
           <div class="stat-label">Global Ranking</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2349 (WC504)</div>
+          <div class="stat-label">best contest ranking</div>
         </div>
       </div>
       <a href="https://leetcode.com/u/20_Rishabh_06" target="_blank" class="profile-link">
@@ -840,11 +1100,11 @@ footer .logo { color: var(--accent); }
           <div class="stat-label">Solved</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">363</div>
+          <div class="stat-num">400+</div>
           <div class="stat-label">Score</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">#83</div>
+          <div class="stat-num">#77</div>
           <div class="stat-label">Inst. Rank</div>
         </div>
       </div>
@@ -896,10 +1156,240 @@ footer .logo { color: var(--accent); }
   </div>
 </section>
 
+```html
+<!-- PROJECTS & INTERNSHIP -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Projects & Internship</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="subsection-title reveal">
+    <span>//</span> Featured Projects
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card reveal">
+      <div class="project-number">01</div>
+
+      <div class="project-content">
+        <div class="project-type">FULL STACK · AI  </div>
+
+        <h3 class="project-title">Student Grievance & Complaint Portal</h3>
+
+        <p class="project-description">
+          An AI-powered Student Grievance Portal that streamlines institutional complaint resolution. The application automates categorization, priority classification, duplicate detection, and time-based escalation, ensuring student issues are resolved transparently and efficiently.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>Javascript</span>
+          <span>React</span>
+          <span>My SQL</span>
+          <span>Tailwind CSS</span>
+          <span>Authentication</span>
+          <span>FAST API</span>
+          <span>And many python librarys</span>
+        </div>
+
+        <div class="project-actions">
+          <a href="https://github.com/rishabhtrivedi9g-pixel/Student_complain_portal" target="_blank" class="project-link">
+            GitHub <span>↗</span>
+          </a>
+<!-- 
+          <a href="________" target="_blank" class="project-link secondary">
+            Live Demo <span>↗</span>
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PROJECT 2 -->
+    <div class="project-card reveal">
+      <div class="project-number">02</div>
+
+      <div class="project-content">
+        <div class="project-type">BACKEND · QUEUE MANAGEMENT</div>
+
+        <h3 class="project-title">Smart Queue Management System</h3>
+
+        <p class="project-description">
+          (still in progress)
+          A scalable queue-management platform designed to reduce waiting
+          time and improve service efficiency. Users can join queues digitally,
+          receive queue updates and track their position without physically
+          waiting in line.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>MongoDB</span>
+          <span>Flutter</span>
+          <span>REST API</span>
+        </div>
+
+        <div class="project-actions">
+          <p>
+            STILL IN PROGRESS
+          </p>
+          <!-- <a href="" target="_blank" class="project-link">
+            GitHub <span>↗</span> -->
+          </a>
+
+          <!-- <a href="________" target="_blank" class="project-link secondary">
+            Live Demo <span>↗</span> 
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PROJECT 3 -->
+    <div class="project-card reveal">
+      <div class="project-number">03</div>
+
+      <div class="project-content">
+        <div class="project-type">AI · ML</div>
+
+        <h3 class="project-title"> Customer Segmentation using Machine Learning</h3>
+
+        <p class="project-description">
+          A machine learning web application that predicts the customer segment of a new customer based on demographic information, spending behaviour, and purchasing history.
+
+The project combines unsupervised learning (K-Means Clustering) with supervised learning (XGBoost Classifier) to provide fast and accurate customer segmentation.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>AI / ML</span>
+        </div>
+
+
+        <div class="project-actions">
+          <a href="" target="_blank" class="project-link">
+            GitHub <span>↗</span>
+          </a>
+
+          <a href="https://github.com/rishabhtrivedi9g-pixel/Customer_categorisation" target="_blank" class="project-link secondary">
+            API Demo <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PROJECT 4 -->
+    <!-- <div class="project-card reveal">
+      <div class="project-number">04</div>
+
+      <div class="project-content">
+        <div class="project-type">BACKEND</div>
+
+        <h3 class="project-title">Student Complaint Portal</h3>
+
+        <p class="project-description">
+          A backend-focused complaint management system that allows students
+          to submit complaints, track their status and escalate unresolved
+          issues to higher authorities through a structured workflow.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>MySQL</span>
+          <span>REST API</span>
+          
+        </div>
+
+        <div class="project-actions">
+          <a href="________" target="_blank" class="project-link">
+            GitHub <span>↗</span>
+          </a>
+
+          <a href="________" target="_blank" class="project-link secondary">
+            Live Demo <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+
+  <!-- INTERNSHIP -->
+  <div class="subsection-title internship-heading reveal">
+    <span>//</span> Experience
+  </div>
+
+  <div class="experience-card reveal">
+
+    <div class="experience-top">
+      <div>
+        <div class="experience-type">INTERNSHIP</div>
+
+        <h3 class="experience-title">
+          Frontech Pvt. Ltd.
+        </h3>
+
+        <div class="experience-role">
+          data analytics
+        </div>
+      </div>
+
+      <div class="experience-date">
+        20th may 2026 — 20th june 2026
+      </div>
+    </div>
+
+    <div class="experience-divider"></div>
+
+    <div class="experience-body">
+
+      <div class="experience-summary">
+        <p>
+          Selected for an internship at Frontech Pvt. Ltd.
+          The internship focuses on data analysis and provides practical
+          exposure to industry.
+        </p>
+      </div>
+
+      <div class="experience-details">
+
+        <!-- <div class="detail-title">Responsibilities</div>
+
+        <ul>
+          <li>________</li>
+          <li>________</li>
+          <li>________</li>
+        </ul> -->
+
+        <div class="detail-title">Technologies</div>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>My SQL</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
