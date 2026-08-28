@@ -371,12 +371,15 @@ section { padding: 100px 60px; position: relative; }
 @keyframes ping { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
 
 /* SKILLS */
-#skills { background: var(--bg); }
+#skills {
+  background: var(--bg);
+}
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  align-items: start;
 }
 
 .skill-group {
@@ -386,19 +389,31 @@ section { padding: 100px 60px; position: relative; }
   transition: border-color 0.25s, transform 0.25s;
   position: relative;
   overflow: hidden;
+  height: auto;
+  align-self: start;
 }
+
 .skill-group::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent3));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s;
 }
-.skill-group:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
-.skill-group:hover::before { transform: scaleX(1); }
+
+.skill-group:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-3px);
+}
+
+.skill-group:hover::before {
+  transform: scaleX(1);
+}
 
 .skill-group-title {
   font-size: 10px;
@@ -410,9 +425,17 @@ section { padding: 100px 60px; position: relative; }
   align-items: center;
   gap: 8px;
 }
-.skill-group-title::before { content: '//'; color: var(--muted); }
 
-.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-group-title::before {
+  content: '//';
+  color: var(--muted);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
 .skill-tag {
   font-size: 11px;
@@ -424,21 +447,34 @@ section { padding: 100px 60px; position: relative; }
   transition: all 0.2s;
   cursor: default;
 }
+
 .skill-tag:hover {
   background: rgba(233,69,96,0.12);
   border-color: rgba(233,69,96,0.4);
   color: var(--accent);
 }
+
 .skill-tag.concept {
   background: rgba(0,212,255,0.04);
   border-color: rgba(0,212,255,0.15);
   color: var(--accent2);
 }
+
 .skill-tag.concept:hover {
   background: rgba(0,212,255,0.12);
   border-color: rgba(0,212,255,0.4);
 }
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* CODING PROFILES */
 #profiles { background: var(--bg2); }
 
