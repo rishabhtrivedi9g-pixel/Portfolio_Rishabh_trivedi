@@ -371,9 +371,7 @@ section { padding: 100px 60px; position: relative; }
 @keyframes ping { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
 
 /* SKILLS */
-#skills {
-  background: var(--bg);
-}
+#skills { background: var(--bg); }
 
 .skills-grid {
   display: grid;
@@ -389,16 +387,13 @@ section { padding: 100px 60px; position: relative; }
   transition: border-color 0.25s, transform 0.25s;
   position: relative;
   overflow: hidden;
-  height: auto;
-  align-self: start;
+  min-width: 0;
 }
 
 .skill-group::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent3));
   transform: scaleX(0);
@@ -410,10 +405,7 @@ section { padding: 100px 60px; position: relative; }
   border-color: rgba(255,255,255,0.15);
   transform: translateY(-3px);
 }
-
-.skill-group:hover::before {
-  transform: scaleX(1);
-}
+.skill-group:hover::before { transform: scaleX(1); }
 
 .skill-group-title {
   font-size: 10px;
@@ -425,17 +417,9 @@ section { padding: 100px 60px; position: relative; }
   align-items: center;
   gap: 8px;
 }
+.skill-group-title::before { content: '//'; color: var(--muted); }
 
-.skill-group-title::before {
-  content: '//';
-  color: var(--muted);
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .skill-tag {
   font-size: 11px;
@@ -447,34 +431,38 @@ section { padding: 100px 60px; position: relative; }
   transition: all 0.2s;
   cursor: default;
 }
-
 .skill-tag:hover {
   background: rgba(233,69,96,0.12);
   border-color: rgba(233,69,96,0.4);
   color: var(--accent);
 }
-
 .skill-tag.concept {
   background: rgba(0,212,255,0.04);
   border-color: rgba(0,212,255,0.15);
   color: var(--accent2);
 }
-
 .skill-tag.concept:hover {
   background: rgba(0,212,255,0.12);
   border-color: rgba(0,212,255,0.4);
 }
+.skill-tag.focus-tag {
+  border-color: rgba(124,58,237,0.3);
+  color: #a78bfa;
+}
+.skill-tag.focus-tag:hover {
+  background: rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.5);
+  color: #c4b5fd;
+}
+
 @media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+  .skills-grid { grid-template-columns: 1fr; }
 }
+
 /* CODING PROFILES */
 #profiles { background: var(--bg2); }
 
@@ -1045,6 +1033,7 @@ footer .logo { color: var(--accent); }
     <h2 class="section-title">Skills</h2>
     <div class="section-line"></div>
   </div>
+
   <div class="skills-grid">
     <div class="skill-group reveal">
       <div class="skill-group-title">Languages</div>
@@ -1056,7 +1045,7 @@ footer .logo { color: var(--accent); }
         <span class="skill-tag">SQL</span>
       </div>
     </div>
-    <div class="skills-grid">
+
     <div class="skill-group reveal">
       <div class="skill-group-title">Backend</div>
       <div class="skill-tags">
@@ -1066,18 +1055,18 @@ footer .logo { color: var(--accent); }
         <span class="skill-tag">MySQL</span>
       </div>
     </div>
-    <div class="skills-grid">
+
     <div class="skill-group reveal">
-      <div class="skill-group-title">AI/ML</div>
+      <div class="skill-group-title">AI / ML</div>
       <div class="skill-tags">
-        <span class="skill-tag">Numpy</span>
+        <span class="skill-tag">NumPy</span>
         <span class="skill-tag">Pandas</span>
         <span class="skill-tag">Scikit-learn</span>
         <span class="skill-tag">XGBoost</span>
-        <span class="skill-tag">Machine Learnig</span>
+        <span class="skill-tag">Machine Learning</span>
       </div>
     </div>
-    <div class="skills-grid">
+
     <div class="skill-group reveal">
       <div class="skill-group-title">Frontend</div>
       <div class="skill-tags">
@@ -1086,6 +1075,7 @@ footer .logo { color: var(--accent); }
         <span class="skill-tag">React</span>
       </div>
     </div>
+
     <div class="skill-group reveal">
       <div class="skill-group-title">Core CS</div>
       <div class="skill-tags">
@@ -1094,18 +1084,17 @@ footer .logo { color: var(--accent); }
         <span class="skill-tag concept">OOP</span>
         <span class="skill-tag concept">DBMS</span>
         <span class="skill-tag concept">Operating Systems</span>
-        <span class="skill-tag concept">Computer Network</span>
+        <span class="skill-tag concept">Computer Networks</span>
         <span class="skill-tag concept">Compiler Design</span>
-        <span class="skill-tag concept">AI</span>
-        <span class="skill-tag concept">Data Science</span>
       </div>
     </div>
+
     <div class="skill-group reveal">
-      <div class="skill-group-title">Currently Learning</div>
+      <div class="skill-group-title">Currently Focusing On</div>
       <div class="skill-tags">
-        <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Machine Learning</span>
-        <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Data Science</span>
-        <span class="skill-tag" style="border-color:rgba(124,58,237,0.3);color:#a78bfa;">Backend Dev</span>
+        <span class="skill-tag focus-tag">Machine Learning</span>
+        <span class="skill-tag focus-tag">Data Science</span>
+        <span class="skill-tag focus-tag">Backend Development</span>
       </div>
     </div>
   </div>
